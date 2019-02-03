@@ -1,12 +1,38 @@
 {
   "pages":[
+    "pages/book/book",
+    "pages/book-detail/book-detail",
     "pages/index/index",
-    "pages/logs/logs"
+    
+    "pages/like/like"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTitleText": "我的小世界",
+    "navigationBarTextStyle":"black",
+    "navigationStyle":"default"
+  },
+  "tabBar":{
+    "list":[
+        {
+          "text":"流行",
+          "pagePath":"pages/index/index",
+         "iconPath":"/images/tab/classic.png",
+         "selectedIconPath":"/images/tab/classic@highlight.png"
+        },
+        {
+          "text": "书单",
+          "pagePath": "pages/book/book",
+          "iconPath": "/images/tab/book.png",
+          "selectedIconPath": "/images/tab/book@highlight.png"
+        },
+        {
+          "text": "喜欢",
+          "pagePath": "pages/like/like",
+          "iconPath": "/images/tab/my.png",
+          "selectedIconPath": "/images/tab/my@highlight.png"
+        }
+    ]
   }
 }

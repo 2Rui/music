@@ -1,0 +1,41 @@
+/* components/epsolid/index.wxss */
+.ep-container{
+display: flex;
+flex-direction: row;
+line-height: 30px;
+align-items:baseline;
+}
+.ep-info{
+  display: flex;
+  align-items: baseline;
+}
+.ep{
+
+}
+.ep-id{
+ font-size:60rpx;
+ font-weight:800;
+ margin-right:14rpx;
+ line-height:60rpx;
+}
+.ep-fen{
+  width:10rpx;
+  height:26px;
+  border-right:1px solid #000;
+  margin-right:10rpx;
+}
+.ep-time{
+  display: flex;
+  flex-direction:column;
+  height:30px;
+  position:relative;
+  bottom:15px;
+}
+.month{
+font-size:24rpx;
+  line-height:24px; 
+}
+.year{
+  font-size:20rpx;
+  line-height:20rpx; 
+}

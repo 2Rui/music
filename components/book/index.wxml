@@ -1,0 +1,11 @@
+<!--components/book/index.wxml-->
+<view class="book-container" bindtap="goDetail" data-ibsn="{{book.isbn10}}">
+  <image src="{{book.image}}" class="bookbg" />
+  <view class="book-info">
+    <text class="title">{{book.title}}</text>
+    <text class="author">{{book.author}}</text>
+    <view class="like" wx:if="showLike">
+      <text class="num">{{book.like_status}} 喜欢</text>
+      </view>
+      </view>
+    </view>

@@ -1,0 +1,45 @@
+<view class="container">
+  <view class="row1">
+    <image src="{{book.img}}" class="row1-img"/>
+    <text class="row1-title">{{book.title}}</text>
+    <text class="row1-author">{{book.author}}</text>
+  </view>
+  <view class="duan">
+  <text>短评</text>
+  <view class="duanCont">
+  <block wx:for="{{comments}}" wx:key="">
+  <com-tag text="{{item}}">
+  <!-- 代替插槽额部分 -->
+  <text slot="after" class="num">{{'+' +index}}</text>
+  </com-tag>
+  </block>
+  </view>
+  </view>
+  <view class="jie">
+    <text class="jieshao">内容简介</text>
+    <text class="jie-cont">{{book.content}}</text>
+  </view>
+  <view class="book-info">
+    <text class="info-tilte">书本信息</text>
+    <view>
+      <text class="left">出版社</text>
+      <text>{{book.where}}</text>
+    </view>
+    <view>
+      <text class="left">出版年</text>
+      <text>{{book.year}}</text>
+    </view>
+    <view>
+      <text class="left">页数</text>
+      <text>{{book.page}}</text>
+    </view>
+    <view>
+      <text class="left">定价</text>
+      <text>{{book.price}}</text>
+    </view>
+    <view>
+      <text class="left">装帧</text>
+      <text>{{book.back}}</text>
+    </view>
+    </view>
+    </view>

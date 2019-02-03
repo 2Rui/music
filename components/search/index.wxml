@@ -1,0 +1,27 @@
+<!--components/search/index.wxml-->
+<view class="seach-container">
+  <view class="searchbox">
+    <image src="images/search.png" class="seachImg" bindtap="searchMore" />
+    <input type="text" placeholder="书籍名" value="{{value}}" bindconfirm="onConfirm" focus="{{focus}}" />
+    <image src="images/cancel.png" class="del" bindtap="onReset" />
+    <text class="cancel" bindtap="onBack">取消</text>
+  </view>
+  <block wx:if="{{!finished}}">
+    <view class="history">
+      <view class="history-title">
+        <view class="line"></view>
+        <text>历史搜索</text>
+      </view>
+      <view class="history-cont">
+      <block wx:for="{{comments}}" wx:key="">
+      <com-tag text="{{item}}" bind:clickTap="onConfirm"/>
+      </block>
+      </view>
+    </view>
+  </block>
+  <view class="bookCont">
+    <block wx:for="{{booksCom}}" wx:key="{{index}}">
+      <com-book book="{{item}}" bind:goDetial="searchBookDetail" showLike="{{false}}"></com-book>
+    </block>
+  </view>
+</view>

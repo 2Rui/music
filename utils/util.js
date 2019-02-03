@@ -1,19 +1,40 @@
-const formatTime = date => {
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const hour = date.getHours()
-  const minute = date.getMinutes()
-  const second = date.getSeconds()
+function http(params){
+  //request是异步请求 性能好
+  wx.requesst({
+    url:params.url,
+    data:params.data,
+    method:params.method?params.method:'GET',
+    header:{
+     'content-type':'application/json'
+    },
+    //回调函数 
+    success:(res)=>{
+      const code=res.statusCode;//code是数字 Number 
+      //starsWith endsWith 字符串的方法  判断状态码是否是2开头的
+      if(code.startsWidth('2')){
+          params.success(res.data);
+      }else{//服务器异常
 
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+      }
+    },
+    //错误 4开头不会走fail.只有在没有网络时才会在治理
+    fail:(error)=>{
+
+    }
+  })
 }
-
-const formatNumber = n => {
-  n = n.toString()
-  return n[1] ? n : '0' + n
-}
-
 module.exports = {
-  formatTime: formatTime
+  http:http
 }
+  
+/*
+调用时 require引入
+使用   utils.http({
+     url:,
+     data:,
+     method:
+     success:(res)=>{
+       这里对数据进行处理
+     }
+})
+*/

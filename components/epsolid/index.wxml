@@ -1,0 +1,12 @@
+<!--components/epsolid/index.wxml-->
+<view class="ep-container">
+<view class="ep-info">
+  <text class="ep">No.</text>
+  <text class="ep-id">{{_epsolid}}</text>
+  <view class="ep-fen"></view>
+  </view>
+  <view class="ep-time">
+    <text class="month">{{month}}</text>
+    <text class="year">{{year}}</text>
+  </view>
+</view>

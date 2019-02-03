@@ -1,3 +1,10 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "com-like":"/components/like/index",
+    "com-movie":"/components/index/movie/index",
+    "com-epsolid":"/components/epsolid/index",
+    "com-navi":"/components/navi/index",
+    "com-music": "/components/index/music/index",
+    "com-essay": "/components/index/essay/index"
+  }
 }

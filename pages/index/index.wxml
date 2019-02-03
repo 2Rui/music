@@ -1,13 +1,17 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<!--pages/index/index.wxml-->
+<!-- <block wx:for="{{classicData}}" wx:for-item="Item" wx:key="{{index}}"> -->
+<view class="indexContainer">
+  <view class="header">
+    <com-epsolid epsolid="{{classicData.index}}" class="epsolid"></com-epsolid>
+    <com-like like="{{classicData.like_status}}" count="{{classicData.fav_nums}}" bind:like="onLike" index="{{classicData.id}}" class="like"></com-like>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <!-- 判断显示哪一个组件 -->
+  <com-movie wx:if="{{classicData.type==100}}" img="{{classicData.image}}" content="{{classicData.content}}"></com-movie>
+  <com-music wx:elif="{{classicData.type==200}}" img="{{classicData.image}}" content="{{classicData.content}}" musicUrl="{{classicData.url}}" musicTitle="{{classicData.title}}"></com-music>
+  <com-essay wx:elif="{{classicData.type==300}}" img="{{classicData.image}}" content="{{classicData.content}}"></com-essay>
+
+  <view style="display:flex;justify-content:center;margin-top:40rpx;">
+    <com-navi title="{{classicData.title}}" first="{{classicData.id==1?true:false}}" last="{{classicData.id==4?true:false}}" class="navi" index="{{classicData.id}}" bind:changeLeft="changeLeft" bind:changeRight="changeRight"></com-navi>
   </view>
 </view>
+<!-- </block> -->

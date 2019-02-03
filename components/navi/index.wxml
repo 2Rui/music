@@ -1,0 +1,6 @@
+<!--components/navi/index.wxml-->
+<view class="navi">
+<image src="{{first?left_no:left}}" class="left" catchtap="goPrev"/>
+<text class="title">{{title}}</text>
+<image src="{{last?right_no:right}}" class="right" catchtap="goNext"/>
+</view>

@@ -1,0 +1,7 @@
+<!--components/index/music/index.wxml-->
+<view class="music-container">
+<image src="{{img}}"  class="musicbg {{isPlay?'rotation':''}}"/>
+<image src="{{isPlay?play:stop}}" class="musicplay" bindtap="onMusic"/>
+<image src="images/music@tag.png" class="musictype"/>
+<text class="music-content">{{content}}</text>
+</view>

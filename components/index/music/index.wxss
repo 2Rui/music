@@ -1,0 +1,49 @@
+/* components/index/music/index.wxss */
+.music-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.musicbg{
+  width: 422rpx;
+  height: 422rpx;
+  margin-top: 60rpx;
+  border-radius:50%;
+   -webkit-animation: music 4s ease  infinite;
+}
+.musicplay{
+  width: 120rpx;
+  height: 120rpx;
+   position: relative; 
+   bottom: 271rpx; 
+}
+.musictype{
+   width:46rpx;
+  height:110rpx;
+  position: relative;
+  bottom: 160rpx;
+  right:310rpx; 
+}
+.music-content{
+  max-width:550rpx;
+  font-size:36rpx;
+}
+/* 动态控制这个类的显示 隐藏 */
+.rotation {
+  -webkit-transform: rotate(360deg);
+  animation: rotation 12s linear infinite;
+  -moz-animation: rotation 12s linear infinite;
+  -webkit-animation: rotation 12s linear infinite;
+  -o-animation: rotation 12s linear infinite;
+}
+/* 自定义的旋转动画 */
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
